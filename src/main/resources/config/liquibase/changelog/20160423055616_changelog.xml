@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!-- <changeSet author="vagrant (generated)" id="1461390986392-1">
+        <createSequence sequenceName="hibernate_sequence"/>
+    </changeSet> -->
+    <changeSet author="vagrant (generated)" id="1461390986392-2">
+        <createTable tableName="fish">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="fishPK"/>
+            </column>
+            <column name="coloracion" type="VARCHAR(255)"/>
+            <column name="estado" type="VARCHAR(255)"/>
+            <column name="longitud_maxima" type="BIGINT"/>
+            <column name="longitud_minima" type="BIGINT"/>
+            <column name="nombre_cientifico" type="VARCHAR(255)"/>
+            <column name="nombre_comun" type="VARCHAR(255)"/>
+            <column name="nombre_etiquetado" type="VARCHAR(255)"/>
+            <column name="olor" type="VARCHAR(255)"/>
+            <column name="origen" type="VARCHAR(255)"/>
+            <column name="peso_maximo" type="BIGINT"/>
+            <column name="peso_minimo" type="BIGINT"/>
+            <column name="precio_kg" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461390986392-3">
+        <createTable tableName="fish_imagenes">
+          <column autoIncrement="true" name="id" type="BIGINT">
+              <constraints primaryKey="true" primaryKeyName="fish_imagenes_PK"/>
+          </column>
+
+            <column name="fish_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="imagenes" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461390986392-4">
+        <createTable tableName="fish_otros_nombres">
+          <column autoIncrement="true" name="id" type="BIGINT">
+              <constraints primaryKey="true" primaryKeyName="fish_otros_nombres_PK"/>
+          </column>
+            <column name="fish_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="otros_nombres" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="vagrant (generated)" id="1461390986392-15">
+        <addForeignKeyConstraint baseColumnNames="fish_id" baseTableName="fish_imagenes" constraintName="FK_9sv0jtqsqf0baqfe742gqr5d5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="fish"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461390986392-18">
+        <addForeignKeyConstraint baseColumnNames="fish_id" baseTableName="fish_otros_nombres" constraintName="FK_p6b91ep9kk5lhe2jccok39pp2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="fish"/>
+    </changeSet>
+</databaseChangeLog>
