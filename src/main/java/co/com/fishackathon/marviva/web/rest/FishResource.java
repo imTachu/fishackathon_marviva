@@ -96,18 +96,27 @@ public class FishResource {
      * @param id the id of the fish to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the fish, or with status 404 (Not Found)
      */
-    @RequestMapping(value = "/fish/{id}",
+//    @RequestMapping(value = "/fish/{id}",
+//        method = RequestMethod.GET,
+//        produces = MediaType.APPLICATION_JSON_VALUE)
+//    @Timed
+//    public ResponseEntity<Fish> getFish(@PathVariable Long id) {
+//        log.debug("REST request to get Fish : {}", id);
+//        Fish fish = fishService.findOne(id);
+//        return Optional.ofNullable(fish)
+//            .map(result -> new ResponseEntity<>(
+//                result,
+//                HttpStatus.OK))
+//            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+//    }
+
+    @RequestMapping(value = "/fish/{nombre}",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public ResponseEntity<Fish> getFish(@PathVariable Long id) {
-        log.debug("REST request to get Fish : {}", id);
-        Fish fish = fishService.findOne(id);
-        return Optional.ofNullable(fish)
-            .map(result -> new ResponseEntity<>(
-                result,
-                HttpStatus.OK))
-            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    public List<Fish> getFishes(@PathVariable String nombre) {
+        log.debug("REST request to get Fish : {}", nombre);
+        return fishService.findByName(nombre);
     }
 
     /**
