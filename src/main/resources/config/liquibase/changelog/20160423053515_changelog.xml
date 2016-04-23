@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="vagrant (generated)" id="1461389727842-1">
+        <createTable tableName="fish_otros_nombres">
+            <column name="fish_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="otros_nombres" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-2">
+        <addColumn tableName="fish">
+            <column name="coloracion" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-3">
+        <addColumn tableName="fish">
+            <column name="estado" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-4">
+        <addColumn tableName="fish">
+            <column name="longitud_maxima" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-5">
+        <addColumn tableName="fish">
+            <column name="longitud_minima" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-6">
+        <addColumn tableName="fish">
+            <column name="nombre_etiquetado" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-7">
+        <addColumn tableName="fish">
+            <column name="olor" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-8">
+        <addColumn tableName="fish">
+            <column name="origen" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-9">
+        <addColumn tableName="fish">
+            <column name="peso_maximo" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-10">
+        <addColumn tableName="fish">
+            <column name="peso_minimo" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-11">
+        <addColumn tableName="fish">
+            <column name="precio_kg" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-12">
+        <addForeignKeyConstraint baseColumnNames="fish_id" baseTableName="fish_otros_nombres" constraintName="FK_p6b91ep9kk5lhe2jccok39pp2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="fish"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-13">
+        <dropColumn columnName="longitud" tableName="fish"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-14">
+        <dropColumn columnName="peso" tableName="fish"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-15">
+        <dropSequence sequenceName="fish_id_seq"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-16">
+        <addDefaultValue columnDataType="bigint" columnName="event_id" defaultValueComputed="nextval('jhi_persistent_audit_event_event_id_seq'::regclass)" tableName="jhi_persistent_audit_event"/>
+        <addAutoIncrement columnDataType="bigint" columnName="event_id" tableName="jhi_persistent_audit_event"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461389727842-17">
+        <addDefaultValue columnDataType="bigint" columnName="id" defaultValueComputed="nextval('jhi_user_id_seq'::regclass)" tableName="jhi_user"/>
+        <addAutoIncrement columnDataType="bigint" columnName="id" tableName="jhi_user"/>
+    </changeSet>
+</databaseChangeLog>
