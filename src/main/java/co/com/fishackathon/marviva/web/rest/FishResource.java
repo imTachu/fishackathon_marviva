@@ -78,15 +78,18 @@ public class FishResource {
 
     /**
      * GET  /fish : get all the fish.
-     *
+     * @Param q 
      * @return the ResponseEntity with status 200 (OK) and the list of fish in body
      */
     @RequestMapping(value = "/fish",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public List<Fish> getAllFish() {
+    public List<Fish> getAllFish(@RequestParam(required = false, value = "q") String q) {
         log.debug("REST request to get all Fish");
+        if (q != null) {
+            return fishService.findByName(q);
+        }
         return fishService.findAll();
     }
 
@@ -96,27 +99,18 @@ public class FishResource {
      * @param id the id of the fish to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the fish, or with status 404 (Not Found)
      */
-//    @RequestMapping(value = "/fish/{id}",
-//        method = RequestMethod.GET,
-//        produces = MediaType.APPLICATION_JSON_VALUE)
-//    @Timed
-//    public ResponseEntity<Fish> getFish(@PathVariable Long id) {
-//        log.debug("REST request to get Fish : {}", id);
-//        Fish fish = fishService.findOne(id);
-//        return Optional.ofNullable(fish)
-//            .map(result -> new ResponseEntity<>(
-//                result,
-//                HttpStatus.OK))
-//            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-//    }
-
-    @RequestMapping(value = "/fish/{nombre}",
+    @RequestMapping(value = "/fish/{id}",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public List<Fish> getFishes(@PathVariable String nombre) {
-        log.debug("REST request to get Fish : {}", nombre);
-        return fishService.findByName(nombre);
+    public ResponseEntity<Fish> getFish(@PathVariable Long id) {
+        log.debug("REST request to get Fish : {}", id);
+        Fish fish = fishService.findOne(id);
+        return Optional.ofNullable(fish)
+            .map(result -> new ResponseEntity<>(
+                result,
+                HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     /**
