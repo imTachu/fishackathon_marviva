@@ -223,12 +223,12 @@ ul#strengthBar {
 /* Makes toolbar not wrap on smaller screens
  http://www.sketchingwithcss.com/samplechapter/cheatsheet.html#right */
 .flex-btn-group-container {
-   display: -webkit-flex;
-   display: flex;
-   -webkit-flex-direction: row;
-   flex-direction: row;
-   -webkit-justify-content: flex-end;
-   justify-content: flex-end;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .jh-table > tbody > tr > td {
@@ -270,5 +270,17 @@ ul#strengthBar {
 /* jhipster-needle-css-add-main JHipster will add new css style */
 
 .search-bar {
-    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 100px;
+}
+
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/hipster.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
