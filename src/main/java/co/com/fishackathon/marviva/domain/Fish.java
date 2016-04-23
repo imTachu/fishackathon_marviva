@@ -23,14 +23,14 @@ public class Fish implements Serializable {
 
     @Column(name = "nombre_cientifico")
     private String nombreCientifico;
-    
+
     @Column(name = "nombre_etiquetado")
     private String nombreEtiquetado;
 
     @Column(name = "otros_nombres")
     @ElementCollection
     private List<String> otrosNombres;
-    
+
     @Column(name = "longitud_minima")
     private Long longitudMinima;
 
@@ -43,8 +43,9 @@ public class Fish implements Serializable {
     @Column(name = "peso_maximo")
     private Long pesoMaximo;
 
-    @Column(name = "imagen")
-    private String imagen;
+    @Column(name = "imagenes")
+    @ElementCollection
+    private List<String> imagenes;
 
     @Column(name = "origen")
     private String origen;
@@ -57,7 +58,7 @@ public class Fish implements Serializable {
 
     @Column(name = "precio_kg")
     private String precioKg;
-    
+
     @Column(name = "estado")
     private String estado;
 
@@ -210,15 +211,15 @@ public class Fish implements Serializable {
     /**
      * @return the imagen
      */
-    public String getImagen() {
-        return imagen;
+    public List<String> getImagenes() {
+        return imagenes;
     }
 
     /**
      * @param imagen the imagen to set
      */
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
+    public void setImagenes(List<String> imagenes) {
+        this.imagenes = imagenes;
     }
 
     /**
