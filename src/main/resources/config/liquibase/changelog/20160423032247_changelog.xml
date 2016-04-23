@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="vagrant (generated)" id="1461381780630-1">
+        <createTable tableName="fish">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="fishPK"/>
+            </column>
+            <column name="imagen" type="VARCHAR(255)"/>
+            <column name="longitud" type="BIGINT"/>
+            <column name="nombre_cientifico" type="VARCHAR(255)"/>
+            <column name="nombre_comun" type="VARCHAR(255)"/>
+            <column name="peso" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461381780630-2">
+        <dropSequence sequenceName="jhi_persistent_audit_event_event_id_seq"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461381780630-3">
+        <dropSequence sequenceName="jhi_user_id_seq"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461381780630-4">
+        <dropNotNullConstraint columnDataType="varchar(100)" columnName="email" tableName="jhi_user"/>
+    </changeSet>
+</databaseChangeLog>
