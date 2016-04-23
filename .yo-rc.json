@@ -1,0 +1,29 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "3.0.0",
+    "baseName": "marviva",
+    "packageName": "co.com.fishackathon.marviva",
+    "packageFolder": "co/com/fishackathon/marviva",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "no",
+    "buildTool": "maven",
+    "enableSocialSignIn": false,
+    "jwtSecretKey": "c2de30fff165f8ccd4df719f66f43e6a60d9d07d",
+    "useSass": false,
+    "applicationType": "monolith",
+    "testFrameworks": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "es"
+    ]
+  }
+}

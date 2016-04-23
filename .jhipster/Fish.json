@@ -1,0 +1,30 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "nombre_comun",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nombre_cientifico",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longitud",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "peso",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "imagen",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160423024506",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "fish",
+    "pagination": "no"
+}

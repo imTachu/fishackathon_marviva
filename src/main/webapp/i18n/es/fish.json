@@ -1,0 +1,26 @@
+{
+    "marvivaApp": {
+        "fish" : {
+            "home": {
+                "title": "Fish",
+                "createLabel": "Crear nuevo Fish",
+                "createOrEditLabel": "Crear o editar Fish",
+                "search": "Search for Fish"
+            },
+            "created": "Un nuevo Fish ha sido creado con el identificador {{ param }}",
+            "updated": "Un Fish ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Fish ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Fish {{ id }}?"
+            },
+            "detail": {
+                "title": "Fish"
+            },
+            "nombre_comun": "Nombre_comun",
+            "nombre_cientifico": "Nombre_cientifico",
+            "longitud": "Longitud",
+            "peso": "Peso",
+            "imagen": "Imagen"
+        }
+    }
+}

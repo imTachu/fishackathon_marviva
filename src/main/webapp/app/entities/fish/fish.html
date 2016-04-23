@@ -1,0 +1,64 @@
+<div>
+    <h2 translate="marvivaApp.fish.home.title">Fish</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="fish.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  translate="marvivaApp.fish.home.createLabel">
+                        Create new Fish
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="marvivaApp.fish.nombre_comun">Nombre_comun</span></th>
+                    <th><span translate="marvivaApp.fish.nombre_cientifico">Nombre_cientifico</span></th>
+                    <th><span translate="marvivaApp.fish.longitud">Longitud</span></th>
+                    <th><span translate="marvivaApp.fish.peso">Peso</span></th>
+                    <th><span translate="marvivaApp.fish.imagen">Imagen</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fish in vm.fish track by fish.id">
+                    <td><a ui-sref="fish-detail({id:fish.id})">{{fish.id}}</a></td>
+                    <td>{{fish.nombre_comun}}</td>
+                    <td>{{fish.nombre_cientifico}}</td>
+                    <td>{{fish.longitud}}</td>
+                    <td>{{fish.peso}}</td>
+                    <td>{{fish.imagen}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="fish-detail({id:fish.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="fish.edit({id:fish.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="fish.delete({id:fish.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

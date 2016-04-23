@@ -1,0 +1,12 @@
+version: '2'
+services:
+    marviva-postgresql:
+        container_name: marviva-postgresql
+        image: postgres:9.5.1
+        # volumes:
+        #     - ~/volumes/jhipster/marviva/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=marviva
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

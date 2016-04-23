@@ -1,0 +1,8 @@
+version: '2'
+services:
+    marviva-sonar:
+        container_name: marviva-sonar
+        image: sonarqube:5.3
+        ports:
+            - 9000:9000
+            - 9092:9092
