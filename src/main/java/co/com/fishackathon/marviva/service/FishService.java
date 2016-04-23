@@ -67,6 +67,20 @@ public class FishService {
         Fish fish = fishRepository.findOne(id);
         return fish;
     }
+    
+    /**
+     *  Buscar un pez por cualquiera de sus nombres.
+     *
+     *  @param nombre 
+     *  @return the entity
+     */
+    @Transactional(readOnly = true) 
+    public List<Fish> findByName(String nombre) {
+        log.debug("Request to get Fish : {}", nombre);
+        List<Fish> fishes = fishRepository.find(nombre);
+        return fishes;
+    }
+    
 
     /**
      * Delete the fish by id.
