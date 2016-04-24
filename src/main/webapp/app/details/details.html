@@ -15,13 +15,14 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li role="presentation" ui-sref-active="active"><a ui-sref="home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.consumer({id: fish.id})">Pictures</a></li>
-                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.bio({id: fish.id})">Biological information</a></li>
-                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.commercial({id: fish.id})">Commercial information</a></li>
-                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.nutrition({id: fish.id})">Nutrition</a></li>
-                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.economy({id: fish.id})">Economy</a></li>
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="home"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.consumer({id: fish.id})">Fotos</a></li>
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.bio({id: fish.id})">Información biológica</a></li>
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.commercial({id: fish.id})">Información Comercial</a></li>
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.nutrition({id: fish.id})">Nutrición</a></li>
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.economy({id: fish.id})">Economía</a></li>
                         <li ng-if="fish.regulacion.maximoToneladas" role="presentation" ui-sref-active="active"><a ui-sref="details.regulation({id: fish.id})">Regulation</a></li>
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.report({id: fish.id})">Reportar</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->

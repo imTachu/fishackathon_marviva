@@ -295,7 +295,7 @@ ul#strengthBar {
 }
 
 .thumb {
-    max-height: 5em;
+    max-width: 20vmin;
 }
 
 .circle {

@@ -29,5 +29,11 @@ angular.module('marvivaApp')
                 }).state('details.regulation', {
                     url: '/regulation',
                     templateUrl: 'app/details/regulation.html'
+                }).state('details.report', {
+                    url: '/report',
+                    templateUrl: 'app/details/report.html'
+                }).state('details.confirm', {
+                    url: '/reported',
+                    templateUrl: 'app/details/confirm-report.html'
                 });
             }]);

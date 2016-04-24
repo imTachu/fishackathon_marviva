@@ -1,3 +1,5 @@
-<p><strong>Precio promedio por kg: </strong>{{fish.economia.precioPromedioKg | currency:'USD$'}}</p>
-<h4>Forma de comercialización</h4>
-{{fish.economia.formaComercializacion}}
+<p ng-show="fish.economia.precioPromedioKg"><strong>Precio promedio por kg: </strong>{{fish.economia.precioPromedioKg| currency:'USD$'}}</p>
+<div ng-show="fish.economia.formaComercializacion">
+    <h4>Forma de comercialización</h4>
+    {{fish.economia.formaComercializacion}}
+</div>
