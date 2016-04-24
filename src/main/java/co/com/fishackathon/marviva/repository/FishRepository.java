@@ -12,8 +12,7 @@ import org.springframework.data.repository.query.Param;
  */
 public interface FishRepository extends JpaRepository<Fish, Long> {
 
-    @Query("SELECT f FROM Fish f WHERE f.nombreComun = LOWER(:nombre) or f.nombreCientifico = LOWER(:nombre) or f.nombreEtiquetado = LOWER(:nombre)  ")
+    @Query("SELECT f FROM Fish f WHERE LOWER(f.nombreComun) like LOWER(:nombre) or LOWER(f.nombreCientifico) like LOWER(:nombre) or LOWER(f.nombreEtiquetado) like LOWER(:nombre)")
     public List<Fish> find(@Param("nombre") String nombre);
 
-    
 }

@@ -25,7 +25,7 @@ import java.util.UUID;
 public class FishService {
 
     private final Logger log = LoggerFactory.getLogger(FishService.class);
-    
+
     private final String BUCKET = "marviva";
 
     @Inject
@@ -67,20 +67,19 @@ public class FishService {
         Fish fish = fishRepository.findOne(id);
         return fish;
     }
-    
+
     /**
-     *  Buscar un pez por cualquiera de sus nombres.
+     * Buscar un pez por cualquiera de sus nombres.
      *
-     *  @param nombre 
-     *  @return the entity
+     * @param nombre
+     * @return the entity
      */
-    @Transactional(readOnly = true) 
+    @Transactional(readOnly = true)
     public List<Fish> findByName(String nombre) {
         log.debug("Request to get Fish : {}", nombre);
-        List<Fish> fishes = fishRepository.find(nombre);
+        List<Fish> fishes = fishRepository.find("%" + nombre + "%");
         return fishes;
     }
-    
 
     /**
      * Delete the fish by id.
