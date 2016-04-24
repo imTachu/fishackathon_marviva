@@ -1,2 +1,7 @@
-<img class="img-thumbnail" src="content/images/hipster.png" alt="">
-<img class="img-thumbnail" src="content/images/hipster.png" alt="">
+<div style="height: 305px">
+    <uib-carousel active="0" interval="5000">
+        <uib-slide ng-repeat="pic in fish.imagenes" index="$index">
+            <img ng-src="{{pic}}" style="margin:auto;">
+        </uib-slide>
+    </uib-carousel>
+</div>
