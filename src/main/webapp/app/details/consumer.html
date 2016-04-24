@@ -1,6 +1,6 @@
 <div class="col-sm-12">
-    <img ng-show="mainImage" ng-src="{{mainImage}}" alt="" class="img-responsive thumbnail col-sm-12">
-    <div ng-click="mainImage = pic" class="img-responsive thumbnail col-sm-2" ng-repeat="pic in fish.imagenes" ng-if="fish.imagenes">
+    <a ng-click="setMain(pic)" class="img-responsive thumbnail col-sm-2" ng-repeat="pic in fish.imagenes" ng-if="fish.imagenes">
         <img class="img-responsive" style="max-height: 20vmax;" ng-src="{{pic}}" alt="">
-    </div>
+    </a>
+    <img ng-show="mainImage" ng-src="{{mainImage}}" alt="" class="img-responsive thumbnail col-sm-12">
 </div>

@@ -12,7 +12,8 @@ angular.module('marvivaApp')
                     }
                 }).state('details.consumer', {
                     url: '/consumer',
-                    templateUrl: 'app/details/consumer.html'
+                    templateUrl: 'app/details/consumer.html',
+                    controller: 'detailsCtrl'
                 }).state('details.bio', {
                     url: '/bio',
                     templateUrl: 'app/details/bio.html'

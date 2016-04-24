@@ -5,4 +5,7 @@ angular.module('marvivaApp')
                 $scope.search = function (q) {
                     $state.go('search', {q: q});
                 };
+                $scope.setMain = function(i){
+                    $scope.mainImage = i;
+                }
             }]);
