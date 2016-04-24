@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="vagrant (generated)" id="1461460899095-1">
+        <createTable tableName="economia">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="economiaPK"/>
+            </column>
+            <column name="forma_comercializacion" type="VARCHAR(255)"/>
+            <column name="precio_promedio_kg" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-2">
+        <createTable tableName="informacion_nutricional">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="informacion_nutricionalPK"/>
+            </column>
+            <column name="calorias" type="VARCHAR(255)"/>
+            <column name="carbohidratos" type="VARCHAR(255)"/>
+            <column name="grasas" type="VARCHAR(255)"/>
+            <column name="proteinas" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-3">
+        <createTable tableName="regulacion">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="regulacionPK"/>
+            </column>
+            <column name="fin_veda" type="date"/>
+            <column name="inicio_veda" type="date"/>
+            <column name="maximo_toneladas" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-4">
+        <addColumn tableName="fish">
+            <column name="caracteristicas_animal" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-5">
+        <addColumn tableName="fish">
+            <column name="caracteristicas_filete" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-6">
+        <addColumn tableName="fish">
+            <column name="estado_conservacion" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-7">
+        <addColumn tableName="fish">
+            <column name="longitud_maxima_animal" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-8">
+        <addColumn tableName="fish">
+            <column name="longitud_maxima_filete" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-9">
+        <addColumn tableName="fish">
+            <column name="longitud_minima_animal" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-10">
+        <addColumn tableName="fish">
+            <column name="longitud_minima_filete" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-11">
+        <addColumn tableName="fish">
+            <column name="peso_maximo_animal" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-12">
+        <addColumn tableName="fish">
+            <column name="peso_maximo_filete" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-13">
+        <addColumn tableName="fish">
+            <column name="peso_minimo_animal" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-14">
+        <addColumn tableName="fish">
+            <column name="peso_minimo_filete" type="int8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-15">
+        <addForeignKeyConstraint baseColumnNames="id" baseTableName="fish" constraintName="FK_clv3awv3l0dibb1n8s7krbbig" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="regulacion"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-16">
+        <addForeignKeyConstraint baseColumnNames="id" baseTableName="fish" constraintName="FK_clv3awv3l0dibb1n8s7krbbigighg" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="economia"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-17">
+        <addForeignKeyConstraint baseColumnNames="id" baseTableName="fish" constraintName="FK_clv3awv3l0dibb1n8s7krbbigllk" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="informacion_nutricional"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-18">
+        <dropPrimaryKey constraintName="fish_imagenes_PK" tableName="fish_imagenes"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-19">
+        <dropColumn columnName="estado" tableName="fish"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-20">
+        <dropColumn columnName="id" tableName="fish_imagenes"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-21">
+        <dropColumn columnName="longitud_maxima" tableName="fish"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-22">
+        <dropColumn columnName="longitud_minima" tableName="fish"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-23">
+        <dropColumn columnName="peso_maximo" tableName="fish"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-24">
+        <dropColumn columnName="peso_minimo" tableName="fish"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-25">
+        <dropColumn columnName="precio_kg" tableName="fish"/>
+    </changeSet>
+    <!-- <changeSet author="vagrant (generated)" id="1461460899095-26">
+        <dropSequence sequenceName="fish_id_seq"/>
+    </changeSet> -->
+    <!-- <changeSet author="vagrant (generated)" id="1461460899095-27">
+        <dropSequence sequenceName="fish_imagenes_id_seq"/>
+    </changeSet> -->
+    <changeSet author="vagrant (generated)" id="1461460899095-29">
+        <dropSequence sequenceName="jhi_persistent_audit_event_event_id_seq"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-30">
+        <dropSequence sequenceName="jhi_user_id_seq"/>
+    </changeSet>
+    <changeSet author="vagrant (generated)" id="1461460899095-31">
+        <dropNotNullConstraint columnDataType="varchar(100)" columnName="email" tableName="jhi_user"/>
+    </changeSet>
+</databaseChangeLog>

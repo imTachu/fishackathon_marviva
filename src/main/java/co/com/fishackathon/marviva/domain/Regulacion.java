@@ -17,8 +17,8 @@ public class Regulacion implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(fetch=FetchType.LAZY, mappedBy="fish_id")
-    private Fish fish;
+    // @OneToOne(fetch=FetchType.LAZY, mappedBy="regulacion")
+    // private Fish fish;
 
     @Column(name = "maximo_toneladas")
     private Long maximoToneladas;
@@ -66,16 +66,16 @@ public class Regulacion implements Serializable {
     /**
      * @return the fish
      */
-    public Fish getFish() {
-        return fish;
-    }
+    // public Fish getFish() {
+    //     return fish;
+    // }
 
     /**
      * @param fish the fish to set
      */
-    public void setFish(Fish fish) {
-        this.fish = fish;
-    }
+    // public void setFish(Fish fish) {
+    //     this.fish = fish;
+    // }
 
     /**
      * @return the maximoToneladas

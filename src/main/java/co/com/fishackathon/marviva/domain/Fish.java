@@ -76,13 +76,19 @@ public class Fish implements Serializable {
     @Column(name = "estado_conservacion")
     private String estadoConservacion;
 
-    @OneToOne(fetch=FetchType.EAGER, mappedBy="informacion_nutricional_id")
+    @OneToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.EAGER, orphanRemoval = true)
+     // @JoinColumn(name="USER_ID", nullable=false)
+     @PrimaryKeyJoinColumn
     private InformacionNutricional informacionNutricional;
 
-    @OneToOne(fetch=FetchType.EAGER, mappedBy="economia_id")
+    @OneToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.EAGER, orphanRemoval = true)
+     // @JoinColumn(name="USER_ID", nullable=false)
+     @PrimaryKeyJoinColumn
     private Economia economia;
 
-    @OneToOne(fetch=FetchType.EAGER, mappedBy="regulacion_id")
+    @OneToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.EAGER, orphanRemoval = true)
+     // @JoinColumn(name="USER_ID", nullable=false)
+     @PrimaryKeyJoinColumn
     private Regulacion regulacion;
 
     @Override

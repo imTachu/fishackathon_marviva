@@ -34,22 +34,8 @@
             <column name="imagenes" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet author="vagrant (generated)" id="1461390986392-4">
-        <createTable tableName="fish_otros_nombres">
-          <column autoIncrement="true" name="id" type="BIGINT">
-              <constraints primaryKey="true" primaryKeyName="fish_otros_nombres_PK"/>
-          </column>
-            <column name="fish_id" type="BIGINT">
-                <constraints nullable="false"/>
-            </column>
-            <column name="otros_nombres" type="VARCHAR(255)"/>
-        </createTable>
-    </changeSet>
 
     <changeSet author="vagrant (generated)" id="1461390986392-15">
         <addForeignKeyConstraint baseColumnNames="fish_id" baseTableName="fish_imagenes" constraintName="FK_9sv0jtqsqf0baqfe742gqr5d5" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="fish"/>
-    </changeSet>
-    <changeSet author="vagrant (generated)" id="1461390986392-18">
-        <addForeignKeyConstraint baseColumnNames="fish_id" baseTableName="fish_otros_nombres" constraintName="FK_p6b91ep9kk5lhe2jccok39pp2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="fish"/>
     </changeSet>
 </databaseChangeLog>

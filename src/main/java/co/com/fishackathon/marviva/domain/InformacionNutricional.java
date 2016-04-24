@@ -16,8 +16,8 @@ public class InformacionNutricional implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @OneToOne(fetch=FetchType.LAZY, mappedBy="fish_id")
-    private Fish fish;
+    // @OneToOne(fetch=FetchType.LAZY, mappedBy="informacionNutricional")
+    // private Fish fish;
 
     @Column(name = "proteinas")
     private String proteinas;
@@ -68,16 +68,16 @@ public class InformacionNutricional implements Serializable {
     /**
      * @return the fish
      */
-    public Fish getFish() {
-        return fish;
-    }
+    // public Fish getFish() {
+    //     return fish;
+    // }
 
     /**
      * @param fish the fish to set
      */
-    public void setFish(Fish fish) {
-        this.fish = fish;
-    }
+    // public void setFish(Fish fish) {
+    //     this.fish = fish;
+    // }
 
     /**
      * @return the proteinas
@@ -135,5 +135,5 @@ public class InformacionNutricional implements Serializable {
         this.grasas = grasas;
     }
 
-    
+
 }
