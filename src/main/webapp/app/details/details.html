@@ -1,17 +1,42 @@
 <div class='background'>
     <div class="container">
-        <div class='col-md-2'>
-            <ul class="nav nav-pills nav-stacked">
-                <li role="presentation" ui-sref-active="active"><a ui-sref="details.consumer({id: 1})">Consumer</a></li>
-                <li role="presentation" ui-sref-active="active"><a ui-sref="details.bio({id: 1})">Biological information</a></li>
-                <li role="presentation" ui-sref-active="active"><a ui-sref="details.commercial({id: 1})">Commercial information</a></li>
-                <li role="presentation" ui-sref-active="active"><a ui-sref="details.nutrition({id: 1})">Nutrición</a></li>
-                <li role="presentation" ui-sref-active="active"><a ui-sref="details.economy({id: 1})">Economía</a></li>
-                <li role="presentation" ui-sref-active="active"><a ui-sref="details.regulation({id: 1})">Regulación</a></li>
-            </ul>
-        </div>
-        <div class='col-md-10'>
-            <div ui-view></div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.consumer({id: fish.id})">Pictures</a></li>
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.bio({id: fish.id})">Biological information</a></li>
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.commercial({id: fish.id})">Commercial information</a></li>
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.nutrition({id: fish.id})">Nutrition</a></li>
+                        <li role="presentation" ui-sref-active="active"><a ui-sref="details.economy({id: fish.id})">Economy</a></li>
+                        <li ng-if="fish.regulacion.maximoToneladas" role="presentation" ui-sref-active="active"><a ui-sref="details.regulation({id: fish.id})">Regulation</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class='col-sm-12'>
+            <div class="col-sm-10">
+                <h1>{{fish.nombreComun}}</h1>
+                <h3><em>{{fish.nombreCientifico}}</em></h3>
+            </div>
+            <div class="col-sm-2">
+                <span class="circle ex"></span>
+            </div>
+            <div class="col-sm-12 well">
+                <div ui-view></div>
+            </div>
         </div>
     </div>
 </div>

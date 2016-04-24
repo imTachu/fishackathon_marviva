@@ -7,11 +7,6 @@ angular.module('marvivaApp')
                     abstract: true,
                     resolve: {
                         fish: ['Restangular', '$stateParams', function (r, params) {
-                                return {
-                                    id: 1,
-                                    nombreComun: 'Pargo',
-                                    nombreCientifico: 'Iltonus arrogantus'
-                                };
                                 return r.one('fish', params.id).get();
                             }]
                     }
