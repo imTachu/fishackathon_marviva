@@ -61,7 +61,7 @@ public class Fish implements Serializable {
     private Long pesoMaximoAnimal;
 
     @Column(name = "imagenes")
-    @ElementCollection
+    @ElementCollection(fetch=FetchType.EAGER)
     private List<String> imagenes;
 
     @Column(name = "origen")
