@@ -45,4 +45,60 @@ public class Economia implements Serializable {
         return Objects.hashCode(getId());
     }
 
+    /**
+     * @return the id
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the fish
+     */
+    public Fish getFish() {
+        return fish;
+    }
+
+    /**
+     * @param fish the fish to set
+     */
+    public void setFish(Fish fish) {
+        this.fish = fish;
+    }
+
+    /**
+     * @return the precioPromedioKg
+     */
+    public Long getPrecioPromedioKg() {
+        return precioPromedioKg;
+    }
+
+    /**
+     * @param precioPromedioKg the precioPromedioKg to set
+     */
+    public void setPrecioPromedioKg(Long precioPromedioKg) {
+        this.precioPromedioKg = precioPromedioKg;
+    }
+
+    /**
+     * @return the formaComercializacion
+     */
+    public String getFormaComercializacion() {
+        return formaComercializacion;
+    }
+
+    /**
+     * @param formaComercializacion the formaComercializacion to set
+     */
+    public void setFormaComercializacion(String formaComercializacion) {
+        this.formaComercializacion = formaComercializacion;
+    }
+
 }
