@@ -271,7 +271,7 @@ ul#strengthBar {
 
 .hv-center {
     position: relative;
-    top: 50%;
+    top: 30%;
     transform: translateY(-50%);
     padding: 0 100px;
 }
