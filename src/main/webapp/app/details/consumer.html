@@ -1,7 +1,6 @@
-<div style="height: 305px">
-    <uib-carousel active="0" interval="5000">
-        <uib-slide ng-repeat="pic in fish.imagenes" index="$index">
-            <img ng-src="{{pic}}" style="margin:auto;">
-        </uib-slide>
-    </uib-carousel>
+<div class="col-sm-12">
+    <img ng-show="mainImage" ng-src="{{mainImage}}" alt="" class="img-responsive thumbnail col-sm-12">
+    <div ng-click="mainImage = pic" class="img-responsive thumbnail col-sm-2" ng-repeat="pic in fish.imagenes" ng-if="fish.imagenes">
+        <img class="img-responsive" style="max-height: 20vmax;" ng-src="{{pic}}" alt="">
+    </div>
 </div>
