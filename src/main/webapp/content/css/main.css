@@ -289,7 +289,9 @@ ul#strengthBar {
     position: absolute;
     height: 100%;
     width: 100%;
-    /*background-image: url("../images/bg.jpg");*/
+    background-image: url("../images/bg.gif");
+    background-size: cover;
+    background-repeat: repeat-y;
 }
 
 .thumb {
@@ -307,6 +309,7 @@ ul#strengthBar {
     color: white;
     font-size: 1.2em;
     padding: 0.8em;
+    margin: 10px;
 }
 .circle.lc{
     background: rgb(0,103,102);
@@ -360,7 +363,7 @@ ul#strengthBar {
     background: black;
     color: tomato;
 }
-.circle.ex:after{
+.circle.ex:before{
     content: 'ex';
     text-transform: uppercase;
 }
@@ -373,7 +376,29 @@ ul#strengthBar {
     text-transform: uppercase;
 }
 
-td {
-    vertical-align: middle;
-    display: table-cell;
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+ 
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
