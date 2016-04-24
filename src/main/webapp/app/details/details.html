@@ -1,4 +1,17 @@
-<div class="container">
-    <h1>{{fish.nombreComun}}</h1>
-    <h2>{{fish.nombreCientifico}}</h2>
+<div class='background'>
+    <div class="container">
+        <div class='col-md-2'>
+            <ul class="nav nav-pills nav-stacked">
+                <li role="presentation" ui-sref-active="active"><a ui-sref="details.consumer({id: 1})">Consumer</a></li>
+                <li role="presentation" ui-sref-active="active"><a ui-sref="details.bio({id: 1})">Biological information</a></li>
+                <li role="presentation" ui-sref-active="active"><a ui-sref="details.commercial({id: 1})">Commercial information</a></li>
+                <li role="presentation" ui-sref-active="active"><a ui-sref="details.nutrition({id: 1})">Nutrición</a></li>
+                <li role="presentation" ui-sref-active="active"><a ui-sref="details.economy({id: 1})">Economía</a></li>
+                <li role="presentation" ui-sref-active="active"><a ui-sref="details.regulation({id: 1})">Regulación</a></li>
+            </ul>
+        </div>
+        <div class='col-md-10'>
+            <div ui-view></div>
+        </div>
+    </div>
 </div>

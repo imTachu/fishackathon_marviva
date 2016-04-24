@@ -1,5 +1,19 @@
-<div class="container">
-    <ul class="list-group">
-        <li ui-sref="details({id: fish.id})" class="list-group-item" ng-repeat="fish in fishes">{{fish.nombreComun}}</li>
-    </ul>
+<div class="background">
+    <div class="hv-center container">
+        <ul class="media-list">
+            <li ui-sref="details.consumer({id: fish.id})" class="list-group-item" ng-repeat="fish in fishes">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object thumb" src="content/images/hipster.png" alt="...">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{fish.nombreComun}}</h4>
+                        <p>{{fish.nombreCientifico}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>

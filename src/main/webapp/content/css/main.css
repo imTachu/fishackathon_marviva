@@ -269,18 +269,111 @@ ul#strengthBar {
 
 /* jhipster-needle-css-add-main JHipster will add new css style */
 
-.search-bar {
+.hv-center {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     padding: 0 100px;
 }
 
+.background-home {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/homebg.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .background {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: url("../images/hipster.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    /*background-image: url("../images/bg.jpg");*/
+}
+
+.thumb {
+    max-height: 5em;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bolder;
+    display: table-cell;
+    color: white;
+    font-size: 1.2em;
+    padding: 0.8em;
+}
+.circle.lc{
+    background: rgb(0,103,102);
+}
+.circle.lc:after{
+    content: 'lc';
+    text-transform: uppercase;
+}
+
+.circle.nt{
+    background: rgb(1,104,100);
+}
+.circle.nt:after{
+    content: 'nt';
+    text-transform: uppercase;
+}
+
+.circle.vu{
+    background: rgb(204,153,0);
+}
+.circle.vu:after{
+    content: 'vu';
+    text-transform: uppercase;
+}
+
+.circle.en{
+    background: rgb(204,103,51);
+}
+.circle.en:after{
+    content: 'en';
+    text-transform: uppercase;
+}
+
+.circle.cr{
+    background: rgb(204,52,51);
+}
+.circle.cr:after{
+    content: 'cr';
+    text-transform: uppercase;
+}
+
+.circle.ew{
+    background: black;
+}
+.circle.ew:after{
+    content: 'ew';
+    text-transform: uppercase;
+}
+
+.circle.ex{
+    background: black;
+    color: tomato;
+}
+.circle.ex:after{
+    content: 'ex';
+    text-transform: uppercase;
+}
+
+.circle.na{
+    background: yellowgreen;
+}
+.circle.na:after{
+    content: 'n/a';
+    text-transform: uppercase;
+}
+
+td {
+    vertical-align: middle;
+    display: table-cell;
 }
