@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import co.com.fishackathon.marviva.domain.InformacionNutricional;
+import co.com.fishackathon.marviva.domain.Economia;
+import co.com.fishackathon.marviva.domain.Regulacion;
 
 /**
  * A Fish.
@@ -27,21 +30,35 @@ public class Fish implements Serializable {
     @Column(name = "nombre_etiquetado")
     private String nombreEtiquetado;
 
-    @Column(name = "otros_nombres")
-    @ElementCollection
-    private List<String> otrosNombres;
+    @Column(name = "caracteristicas_filete")
+    private String caracteristicasFilete;
 
-    @Column(name = "longitud_minima")
-    private Long longitudMinima;
+    @Column(name = "caracteristicas_animal")
+    private String caracteristicasAnimal;
 
-    @Column(name = "longitud_maxima")
-    private Long longitudMaxima;
+    @Column(name = "longitud_minima_filete")
+    private Long longitudMinimaFilete;
 
-    @Column(name = "peso_minimo")
-    private Long pesoMinimo;
+    @Column(name = "longitud_maxima_filete")
+    private Long longitudMaximaFilete;
 
-    @Column(name = "peso_maximo")
-    private Long pesoMaximo;
+    @Column(name = "peso_minimo_filete")
+    private Long pesoMinimoFilete;
+
+    @Column(name = "peso_maximo_filete")
+    private Long pesoMaximoFilete;
+
+    @Column(name = "longitud_minima_animal")
+    private Long longitudMinimaAnimal;
+
+    @Column(name = "longitud_maxima_animal")
+    private Long longitudMaximaAnimal;
+
+    @Column(name = "peso_minimo_animal")
+    private Long pesoMinimoAnimal;
+
+    @Column(name = "peso_maximo_animal")
+    private Long pesoMaximoAnimal;
 
     @Column(name = "imagenes")
     @ElementCollection
@@ -56,11 +73,23 @@ public class Fish implements Serializable {
     @Column(name = "olor")
     private String olor;
 
-    @Column(name = "precio_kg")
-    private String precioKg;
+    @Column(name = "estado_conservacion")
+    private String estadoConservacion;
 
-    @Column(name = "estado")
-    private String estado;
+    @OneToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.EAGER, orphanRemoval = true)
+     // @JoinColumn(name="USER_ID", nullable=false)
+     @PrimaryKeyJoinColumn
+    private InformacionNutricional informacionNutricional;
+
+    @OneToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.EAGER, orphanRemoval = true)
+     // @JoinColumn(name="USER_ID", nullable=false)
+     @PrimaryKeyJoinColumn
+    private Economia economia;
+
+    @OneToOne(cascade = CascadeType.ALL, optional = false, fetch = FetchType.EAGER, orphanRemoval = true)
+     // @JoinColumn(name="USER_ID", nullable=false)
+     @PrimaryKeyJoinColumn
+    private Regulacion regulacion;
 
     @Override
     public boolean equals(Object o) {
@@ -139,84 +168,154 @@ public class Fish implements Serializable {
     }
 
     /**
-     * @return the otrosNombres
+     * @return the caracteristicasFilete
      */
-    public List<String> getOtrosNombres() {
-        return otrosNombres;
+    public String getCaracteristicasFilete() {
+        return caracteristicasFilete;
     }
 
     /**
-     * @param otrosNombres the otrosNombres to set
+     * @param caracteristicasFilete the caracteristicasFilete to set
      */
-    public void setOtrosNombres(List<String> otrosNombres) {
-        this.otrosNombres = otrosNombres;
+    public void setCaracteristicasFilete(String caracteristicasFilete) {
+        this.caracteristicasFilete = caracteristicasFilete;
     }
 
     /**
-     * @return the longitudMinima
+     * @return the caracteristicasAnimal
      */
-    public Long getLongitudMinima() {
-        return longitudMinima;
+    public String getCaracteristicasAnimal() {
+        return caracteristicasAnimal;
     }
 
     /**
-     * @param longitudMinima the longitudMinima to set
+     * @param caracteristicasAnimal the caracteristicasAnimal to set
      */
-    public void setLongitudMinima(Long longitudMinima) {
-        this.longitudMinima = longitudMinima;
+    public void setCaracteristicasAnimal(String caracteristicasAnimal) {
+        this.caracteristicasAnimal = caracteristicasAnimal;
     }
 
     /**
-     * @return the longitudMaxima
+     * @return the longitudMinimaFilete
      */
-    public Long getLongitudMaxima() {
-        return longitudMaxima;
+    public Long getLongitudMinimaFilete() {
+        return longitudMinimaFilete;
     }
 
     /**
-     * @param longitudMaxima the longitudMaxima to set
+     * @param longitudMinimaFilete the longitudMinimaFilete to set
      */
-    public void setLongitudMaxima(Long longitudMaxima) {
-        this.longitudMaxima = longitudMaxima;
+    public void setLongitudMinimaFilete(Long longitudMinimaFilete) {
+        this.longitudMinimaFilete = longitudMinimaFilete;
     }
 
     /**
-     * @return the pesoMinimo
+     * @return the longitudMaximaFilete
      */
-    public Long getPesoMinimo() {
-        return pesoMinimo;
+    public Long getLongitudMaximaFilete() {
+        return longitudMaximaFilete;
     }
 
     /**
-     * @param pesoMinimo the pesoMinimo to set
+     * @param longitudMaximaFilete the longitudMaximaFilete to set
      */
-    public void setPesoMinimo(Long pesoMinimo) {
-        this.pesoMinimo = pesoMinimo;
+    public void setLongitudMaximaFilete(Long longitudMaximaFilete) {
+        this.longitudMaximaFilete = longitudMaximaFilete;
     }
 
     /**
-     * @return the pesoMaximo
+     * @return the pesoMinimoFilete
      */
-    public Long getPesoMaximo() {
-        return pesoMaximo;
+    public Long getPesoMinimoFilete() {
+        return pesoMinimoFilete;
     }
 
     /**
-     * @param pesoMaximo the pesoMaximo to set
+     * @param pesoMinimoFilete the pesoMinimoFilete to set
      */
-    public void setPesoMaximo(Long pesoMaximo) {
-        this.pesoMaximo = pesoMaximo;
+    public void setPesoMinimoFilete(Long pesoMinimoFilete) {
+        this.pesoMinimoFilete = pesoMinimoFilete;
     }
 
     /**
-     * @return the imagen
+     * @return the pesoMaximoFilete
+     */
+    public Long getPesoMaximoFilete() {
+        return pesoMaximoFilete;
+    }
+
+    /**
+     * @param pesoMaximoFilete the pesoMaximoFilete to set
+     */
+    public void setPesoMaximoFilete(Long pesoMaximoFilete) {
+        this.pesoMaximoFilete = pesoMaximoFilete;
+    }
+
+    /**
+     * @return the longitudMinimaAnimal
+     */
+    public Long getLongitudMinimaAnimal() {
+        return longitudMinimaAnimal;
+    }
+
+    /**
+     * @param longitudMinimaAnimal the longitudMinimaAnimal to set
+     */
+    public void setLongitudMinimaAnimal(Long longitudMinimaAnimal) {
+        this.longitudMinimaAnimal = longitudMinimaAnimal;
+    }
+
+    /**
+     * @return the longitudMaximaAnimal
+     */
+    public Long getLongitudMaximaAnimal() {
+        return longitudMaximaAnimal;
+    }
+
+    /**
+     * @param longitudMaximaAnimal the longitudMaximaAnimal to set
+     */
+    public void setLongitudMaximaAnimal(Long longitudMaximaAnimal) {
+        this.longitudMaximaAnimal = longitudMaximaAnimal;
+    }
+
+    /**
+     * @return the pesoMinimoAnimal
+     */
+    public Long getPesoMinimoAnimal() {
+        return pesoMinimoAnimal;
+    }
+
+    /**
+     * @param pesoMinimoAnimal the pesoMinimoAnimal to set
+     */
+    public void setPesoMinimoAnimal(Long pesoMinimoAnimal) {
+        this.pesoMinimoAnimal = pesoMinimoAnimal;
+    }
+
+    /**
+     * @return the pesoMaximoAnimal
+     */
+    public Long getPesoMaximoAnimal() {
+        return pesoMaximoAnimal;
+    }
+
+    /**
+     * @param pesoMaximoAnimal the pesoMaximoAnimal to set
+     */
+    public void setPesoMaximoAnimal(Long pesoMaximoAnimal) {
+        this.pesoMaximoAnimal = pesoMaximoAnimal;
+    }
+
+    /**
+     * @return the imagenes
      */
     public List<String> getImagenes() {
         return imagenes;
     }
 
     /**
-     * @param imagen the imagen to set
+     * @param imagenes the imagenes to set
      */
     public void setImagenes(List<String> imagenes) {
         this.imagenes = imagenes;
@@ -265,30 +364,59 @@ public class Fish implements Serializable {
     }
 
     /**
-     * @return the precioKg
+     * @return the estadoConservacion
      */
-    public String getPrecioKg() {
-        return precioKg;
+    public String getEstadoConservacion() {
+        return estadoConservacion;
     }
 
     /**
-     * @param precioKg the precioKg to set
+     * @param estadoConservacion the estadoConservacion to set
      */
-    public void setPrecioKg(String precioKg) {
-        this.precioKg = precioKg;
+    public void setEstadoConservacion(String estadoConservacion) {
+        this.estadoConservacion = estadoConservacion;
     }
 
     /**
-     * @return the estado
+     * @return the informacionNutricional
      */
-    public String getEstado() {
-        return estado;
+    public InformacionNutricional getInformacionNutricional() {
+        return informacionNutricional;
     }
 
     /**
-     * @param estado the estado to set
+     * @param informacionNutricional the informacionNutricional to set
      */
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setInformacionNutricional(InformacionNutricional informacionNutricional) {
+        this.informacionNutricional = informacionNutricional;
     }
+
+    /**
+     * @return the economia
+     */
+    public Economia getEconomia() {
+        return economia;
+    }
+
+    /**
+     * @param economia the economia to set
+     */
+    public void setEconomia(Economia economia) {
+        this.economia = economia;
+    }
+
+    /**
+     * @return the regulacion
+     */
+    public Regulacion getRegulacion() {
+        return regulacion;
+    }
+
+    /**
+     * @param regulacion the regulacion to set
+     */
+    public void setRegulacion(Regulacion regulacion) {
+        this.regulacion = regulacion;
+    }
+
 }
