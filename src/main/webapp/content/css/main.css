@@ -280,7 +280,7 @@ ul#strengthBar {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-image: url("../images/homebg.gif");
+    background-image: url("../images/homebg.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
